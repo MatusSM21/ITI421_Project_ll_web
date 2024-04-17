@@ -1,5 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
+require($_SERVER['DOCUMENT_ROOT'] . '/shared/header.php');
+?>
 
 <head>
     <meta charset="UTF-8">
@@ -19,13 +20,13 @@
                 <div class="card">
                     <div class="row align-items-start ml-1">
                         <div class="col">
-                            <a href="dashboard.html" class="buttonmain">Dashboard</a>
+                            <a href="dashboard.php" class="buttonmain">Dashboard</a>
                         </div>
                         <div class="col">
-                            <a href="rides.html" class="buttonmain">Rides</a>
+                            <a href="rides.php" class="buttonmain">Rides</a>
                         </div>
                         <div class="col">
-                            <a href="settings.html" class="buttonmain">Settings</a>
+                            <a href="settings.php" class="buttonmain">Settings</a>
                         </div>
                     </div>
                 </div>
@@ -39,7 +40,7 @@
 
                 <!-- Dashboard Navigation -->
                 <div class="dashboard-link">
-                    <a href="dashboard.html">Dashboard</a>
+                    <a href="dashboard.php">Dashboard</a>
                     <span class="arrow">></span>
                 </div>
 
@@ -51,7 +52,7 @@
                         <!-- Title for Rides List -->
                         <p class="title">Your current list of Rides</p>
                         <!-- Button to Add Ride -->
-                        <div class="buttonplus" onclick=href="styles_principal">
+                        <div class="buttonplus" onclick="location.href='styles_principal.php'">
                             <div class="plus horizontal"></div>
                             <div class="plus vertical"></div>
                         </div>
@@ -124,7 +125,7 @@
                             </div>
                         </div>
                         <!-- Button to Add Ride -->
-                        <div class="buttonplus2" onclick="location.href='add.html'">
+                        <div class="buttonplus2" onclick="location.href='add.php'">
                             <div class="plus horizontal"></div>
                             <div class="plus vertical"></div>
                         </div>
@@ -171,4 +172,6 @@
     </script>
 </body>
 
-</html>
+<?php
+require($_SERVER['DOCUMENT_ROOT'] . '/shared/footer.php');
+?>
