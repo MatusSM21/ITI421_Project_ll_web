@@ -1,0 +1,59 @@
+/* Set up basic styling for the entire document */
+body {
+    margin: 0;
+    /* Remove default margin */
+    padding: 0;
+    /* Remove default padding */
+    height: 100%;
+    /* Set body height to 100% of viewport height */
+    display: flex;
+    /* Use flexbox layout */
+    justify-content: center;
+    /* Horizontally center contents */
+    align-items: center;
+    /* Vertically center contents */
+    background-image: url('background-image.jpg');
+    /* Set background image */
+    background-size: cover;
+    /* Cover the entire background */
+    background-position: center;
+    /* Center the background image */
+}
+
+/* Define styles for the container holding the content */
+.container {
+    max-width: 1000px;
+    /* Set maximum width of the container */
+    padding: 20px;
+    /* Add padding inside the container */
+}
+
+/* Define styles for a card element */
+.card {
+    background-color: rgba(255, 255, 255, 0.8);
+    /* Set background color with transparency */
+}
+
+/* Define styles for the body of the card */
+.card-body {
+    text-align: center;
+    /* Center-align text within the card body */
+}
+
+/* Define styles for images */
+.img {
+    max-width: 100%;
+    /* Set maximum width of images to 100% of container */
+    height: auto;
+    /* Maintain aspect ratio of images */
+    margin-bottom: 20px;
+    /* Add margin at the bottom of images */
+}
+
+/* Define styles for paragraphs with class 'pUser' */
+.pUser {
+    margin-top: 20px;
+    /* Add margin at the top of paragraphs */
+    margin-bottom: 0;
+    /* Remove margin at the bottom of paragraphs */
+}

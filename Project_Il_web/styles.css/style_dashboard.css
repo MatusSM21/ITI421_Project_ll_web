@@ -1,0 +1,225 @@
+/* Style for images */
+.img {
+    margin-top: 1%;
+    /* Adds a top margin of 1% */
+    margin-left: 10%;
+    /* Adds a left margin of 10% */
+    width: 25%;
+    /* Sets the width of the image to 25% of its container */
+}
+
+/* Style for titles */
+.title {
+    margin-left: 0%;
+    /* Resets the left margin */
+    margin-top: 2%;
+    /* Adds a top margin of 2% */
+}
+
+/* Style for container */
+.container {
+    margin-top: 2%;
+    /* Adds a top margin of 2% */
+}
+
+/* Style for tables */
+.table {
+    margin-top: 50%;
+    /* Adds a top margin of 50% */
+    width: 80%;
+    /* Sets the width of the table to 80% of its container */
+    margin: auto;
+    /* Centers the table horizontally */
+}
+
+/* Style for main buttons */
+.buttonmain {
+    color: black;
+    /* Sets the text color to black */
+}
+
+/* Style for rows in a flex container */
+.row {
+    display: flex;
+    /* Displays elements in a flex container */
+    justify-content: space-between;
+    /* Distributes space between flex items */
+    padding: 2% 2;
+    /* Sets padding for the rows */
+    border-bottom: 2px solid #ddd;
+    /* Adds a horizontal line below each row */
+}
+
+/* Style for columns */
+.col {
+    width: 25%;
+    /* Sets the width of each column to 25% */
+    text-align: left;
+    /* Aligns text to the left */
+    border-right: 5px solid #dbdada;
+    /* Adds a vertical line to the right of each column */
+}
+
+/* Style for cards */
+.card {
+    border-radius: 10px;
+    /* Sets the border radius to create rounded corners */
+}
+
+/* Style for the last column */
+.col:last-child {
+    border-right: none;
+    /* Removes the vertical line from the last column */
+}
+
+/* Style for dashboard links */
+.dashboard-link {
+    font-family: Arial, sans-serif;
+    /* Sets the font family */
+    font-size: 12px;
+    /* Sets the font size to 12px */
+}
+
+.dashboard-link a {
+    color: blue;
+    /* Sets the link color to blue */
+    text-decoration: underline;
+    /* Adds an underline to links */
+}
+
+.dashboard-link .arrow {
+    color: blue;
+    /* Sets the color of the arrow */
+    margin-left: 5px;
+    /* Adds a left margin of 5px */
+}
+
+/* Style for user icons in welcome message */
+.welcome-user .user-icon {
+    position: absolute;
+    width: 50px; /* Ajusta el ancho de la mini imagen según tus necesidades */
+    height: auto; /* Esto asegura que la imagen mantenga su relación de aspecto */
+    margin-left: 15px;
+    /* Adds a left margin of 5px */
+    width: 40px;
+    /* Sets the width of the user icon */
+}
+
+/* Style for welcome message */
+.welcome-user {
+    font-family: Arial, sans-serif;
+    /* Sets the font family */
+    font-size: 15px;
+    /* Sets the font size to 16px */
+    margin-left: 70%;
+    /* Sets the left margin to 70% */
+}
+
+.welcome-user .title {
+    
+    margin-left: -235%;
+    /* Sets a negative left margin */
+    margin-top: -10%;
+    /* Sets a negative top margin */
+}
+
+.welcome-user span {
+    color: black;
+    /* Sets the text color to black */
+}
+
+/* Style for usernames */
+.username {
+    color: orange;
+    /* Sets the text color to orange */
+}
+
+/* Style for horizontal arrows in dashboard links */
+.dashboard-link .arrow {
+    color: rgb(0, 0, 0);
+    /* Sets the color of the arrow */
+    margin-left: 5px;
+    /* Adds a left margin of 5px */
+}
+
+/* Style for main buttons with a plus icon */
+.buttonplus {
+    margin-top: -7%;
+    /* Adds a negative top margin */
+    margin-left: 85%;
+    /* Sets the left margin to 85% */
+    width: 40px;
+    /* Sets the width to 40px */
+    height: 40px;
+    /* Sets the height to 40px */
+    border: 1px solid black;
+    /* Sets the border to 1px solid black */
+    position: relative;
+    /* Sets the position to relative */
+    border-radius: 6px;
+    /* Sets the border radius to 6px */
+    background-color: #D3D3D3;
+    /* Sets the background color */
+    box-shadow: 3px 3px 9px rgba(0, 0, 0, 0.3);
+    /* Adds a box shadow */
+    cursor: pointer;
+    /* Changes the cursor to a pointer */
+}
+
+/* Style for secondary buttons with a plus icon */
+.buttonplus2 {
+    margin-top: 1%;
+    /* Adds a top margin of 1% */
+    margin-left: 85%;
+    /* Sets the left margin to 85% */
+    width: 40px;
+    /* Sets the width to 40px */
+    height: 40px;
+    /* Sets the height to 40px */
+    border: 1px solid black;
+    /* Sets the border to 1px solid black */
+    position: relative;
+    /* Sets the position to relative */
+    border-radius: 6px;
+    /* Sets the border radius to 6px */
+    background-color: #D3D3D3;
+    /* Sets the background color */
+    box-shadow: 3px 3px 9px rgba(0, 0, 0, 0.3);
+    /* Adds a box shadow */
+    cursor: pointer;
+    /* Changes the cursor to a pointer */
+}
+
+/* Style for plus icon inside buttons */
+.plus {
+    background-color: #696969;
+    /* Sets the background color */
+    position: absolute;
+    /* Sets the position to absolute */
+    border-radius: 1px;
+    /* Sets the border radius to 1px */
+}
+
+/* Style for horizontal line in plus icon */
+.horizontal {
+    width: 20px;
+    /* Sets the width to 20px */
+    height: 3px;
+    /* Sets the height to 3px */
+    top: 18.5px;
+    /* Positions the line vertically */
+    left: 10px;
+    /* Positions the line horizontally */
+}
+
+/* Style for vertical line in plus icon */
+.vertical {
+    width: 3px;
+    /* Sets the width to 3px */
+    height: 20px;
+    /* Sets the height to 20px */
+    top: 10px;
+    /* Positions the line vertically */
+    left: 18.5px;
+    /* Positions the line horizontally */
+}

@@ -1,0 +1,109 @@
+/* Styles for the button */
+.btn {
+    /* Positioning the button */
+    margin-left: 85%;
+    margin-top: 6%;
+    /* Setting padding */
+    padding: 10px 20px;
+    /* Defining border properties */
+    border: 0.5px solid #4f77b4;
+    /* Setting font size and weight */
+    font-size: 19px;
+    font-weight: 650;
+    /* Setting border radius */
+    border-radius: 0%;
+}
+
+/* Styles for the image */
+.img {
+    /* Positioning the image */
+    margin-top: 5%;
+    margin-left: 35%;
+    /* Setting image width */
+    width: 25%;
+}
+
+/* Styles for the title */
+.title {
+    /* Positioning the title */
+    margin-left: 3%;
+    margin-top: 2%;
+}
+
+/* Styles for the container */
+.container {
+    /* Positioning the container */
+    margin-top: 2%;
+}
+
+/* Styles for the horizontal box */
+.horizontal-box {
+    /* Using flexbox to distribute elements horizontally */
+    display: flex;
+    /* Aligning elements vertically */
+    align-items: center;
+}
+
+/* Styles for the text input */
+.input-text {
+    /* Adding border to the text input */
+    border: 1px solid #ccc;
+    /* Adding padding */
+    padding: 5px;
+    /* Adding left margin to separate from text */
+    margin-left: 10px;
+}
+
+/* Styles for the box */
+.box {
+    /* Positioning the box */
+    margin-left: 2.9%;
+    margin-right: 5%;
+    /* Defining border properties */
+    border: 1.5px solid #000000;
+    /* Setting padding */
+    padding: 10px;
+}
+
+/* Styles for the table */
+.table {
+    /* Setting table width */
+    width: 80%;
+    /* Centering the table */
+    margin: auto;
+    /* Adding border around the container */
+    border: 1px solid #ddd;
+}
+
+/* Styles for the table row */
+.row {
+    /* Using flexbox to distribute space between elements horizontally */
+    display: flex;
+    justify-content: space-between;
+    /* Adding padding above and below each row */
+    padding: 10px 0;
+    /* Adding horizontal line below each row */
+    border-bottom: 1px solid #ddd;
+}
+
+/* Styles for the table column */
+.col {
+    /* Setting column width */
+    width: 25%;
+    /* Aligning text to the left */
+    text-align: left;
+    /* Adding vertical line to the right of each column */
+    border-right: 1px solid #ddd;
+}
+
+/* Styles for the last column in the table */
+.col:last-child {
+    /* Removing vertical line from the last column */
+    border-right: none;
+}
+
+/* Additional button styles */
+.button {
+    /* Setting button color */
+    color: #000000;
+}

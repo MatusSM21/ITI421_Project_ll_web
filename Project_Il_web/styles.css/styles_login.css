@@ -1,0 +1,57 @@
+/* Styles for the body element */
+body {
+    margin: 0;
+    /* Remove default margin */
+    padding: 0;
+    /* Remove default padding */
+    height: 100%;
+    /* Set height to 100% of viewport */
+    display: flex;
+    /* Use flexbox layout */
+    justify-content: center;
+    /* Horizontally center content */
+    align-items: center;
+    /* Vertically center content */
+    background-size: cover;
+    /* Cover background with image */
+    background-position: center;
+    /* Center background image */
+}
+
+/* Styles for the container class */
+.container {
+    max-width: 400px;
+    /* Maximum width of the container to fit small devices */
+    padding: 20px;
+    /* Add padding inside the container */
+}
+
+/* Styles for the card class */
+.card {
+    background-color: rgba(255, 255, 255, 0.8);
+    /* Background color with slight transparency */
+}
+
+/* Styles for the card-body class */
+.card-body {
+    text-align: center;
+    /* Center-align text within the card body */
+}
+
+/* Styles for the img class */
+.img {
+    max-width: 100%;
+    /* Ensure images don't exceed container width */
+    height: auto;
+    /* Maintain aspect ratio */
+    margin-bottom: 20px;
+    /* Add margin at the bottom of the image */
+}
+
+/* Styles for the pUser class */
+.pUser {
+    margin-top: 20px;
+    /* Add margin at the top of the paragraph */
+    margin-bottom: 0;
+    /* Remove margin at the bottom of the paragraph */
+}

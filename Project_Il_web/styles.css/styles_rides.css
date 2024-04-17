@@ -1,0 +1,179 @@
+/* Styles for images */
+.img {
+    margin-top: 1%;
+    /* Adds 1% margin from the top */
+    margin-left: 10%;
+    /* Adds 10% margin from the left */
+    width: 25%;
+    /* Sets the width to 25% of its container */
+}
+
+/* Styles for titles */
+.title {
+    margin-left: 0%;
+    /* Resets left margin to 0% */
+    margin-top: 2%;
+    /* Adds 2% margin from the top */
+}
+
+/* Styles for container elements */
+.container {
+    margin-top: 2%;
+    /* Adds 2% margin from the top */
+}
+
+/* Styles for main buttons */
+.buttonmain {
+    color: black;
+    /* Sets text color to black */
+}
+
+/* Styles for dashboard links */
+.dashboard-link {
+    font-family: Arial, sans-serif;
+    /* Sets font family */
+    font-size: 16px;
+    /* Sets font size to 16 pixels */
+}
+
+.dashboard-link a {
+    color: blue;
+    /* Sets link color to blue */
+    text-decoration: underline;
+    /* Underlines links */
+}
+
+.dashboard-link .arrow {
+    color: blue;
+    /* Sets arrow color to blue */
+    margin-left: 5px;
+    /* Adds 5 pixels of margin from the left */
+}
+
+/* Styles for user icons in welcome message */
+.welcome-user .user-icon {
+    margin-left: 5px;
+    /* Adds 5 pixels of margin from the left */
+    width: 30px;
+    /* Sets width to 30 pixels */
+}
+
+.welcome-user {
+    font-family: Arial, sans-serif;
+    /* Sets font family */
+    font-size: 16px;
+    /* Sets font size to 16 pixels */
+    margin-left: 70%;
+    /* Adds 70% margin from the left */
+}
+
+/* Styles for titles in welcome message */
+.welcome-user .title {
+    margin-left: -235%;
+    /* Adjusts left margin */
+    margin-top: -10%;
+    /* Adjusts top margin */
+}
+
+.welcome-user span {
+    color: black;
+    /* Sets text color to black */
+}
+
+/* Styles for usernames */
+.username {
+    color: orange;
+    /* Sets text color to orange */
+}
+
+/* Repeated styles for arrow */
+.dashboard-link .arrow {
+    width: 50px;
+    /* Sets width to 50 pixels */
+    color: rgb(0, 0, 0);
+    /* Sets arrow color to black */
+    margin-left: 5px;
+    /* Adds 5 pixels of margin from the left */
+}
+
+/* Styles for info section */
+.info {
+    margin-top: 5%;
+    /* Adds 5% margin from the top */
+    margin-left: 11%;
+    /* Adds 11% margin from the left */
+}
+
+/* Styles for specific form labels */
+.info .form-label:nth-child(3) {
+    margin-top: 20px;
+    /* Adds 20 pixels of margin from the top */
+}
+
+.info .form-label:nth-child(5) {
+    margin-top: 20px;
+    /* Adds 20 pixels of margin from the top */
+}
+
+/* Styles for description section */
+.description {
+    width: 100%;
+    /* Sets width to 100% */
+    max-width: 600px;
+    /* Sets maximum width to 600 pixels */
+    margin: 0 auto;
+    /* Centers horizontally */
+}
+
+/* Styles for textarea within description */
+.description textarea {
+    width: 100%;
+    /* Sets width to 100% */
+    height: 200px;
+    /* Sets height to 200 pixels */
+    margin-bottom: 20px;
+    /* Adds 20 pixels of margin from the bottom */
+    resize: none;
+    /* Disables resizing */
+    border-color: black;
+    /* Sets border color to black */
+    margin-left: -4%;
+    /* Adds 4% negative margin from the left */
+}
+
+/* Styles for buttons within description */
+.description.buttons {
+    justify-content: space-between;
+    /* Distributes space between elements */
+}
+
+.description .save {
+    margin-left: 28%;
+    /* Adds 28% margin from the left */
+    background-color: green;
+    /* Sets background color to green */
+    color: white;
+    /* Sets text color to white */
+    padding: 10px 20px;
+    /* Sets padding */
+    border: none;
+    /* Removes border */
+    cursor: pointer;
+    /* Changes cursor to pointer */
+    top: 10px;
+    /* Adds 10 pixels of space from the top */
+}
+
+/* Styles for heading within description */
+.description h3 {
+    margin-left: -5%;
+    /* Adds 5% negative margin from the left */
+}
+
+/* Styles for cancel button */
+.cancel {
+    position: relative;
+    /* Sets position to relative */
+    top: 100px;
+    /* Adds 100 pixels of space from the top */
+}

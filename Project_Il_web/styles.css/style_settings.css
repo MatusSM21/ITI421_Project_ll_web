@@ -1,0 +1,160 @@
+/* Styling for images */
+.img {
+    margin-top: 1%;
+    /* Set top margin to 1% */
+    margin-left: 10%;
+    /* Set left margin to 10% */
+    width: 25%;
+    /* Set width to 25% of its containing element */
+}
+
+/* Styling for titles */
+.title {
+    margin-left: 0%;
+    /* Set left margin to 0% */
+    margin-top: 2%;
+    /* Set top margin to 2% */
+}
+
+/* Styling for container elements */
+.container {
+    margin-top: 2%;
+    /* Set top margin to 2% */
+}
+
+/* Styling for main buttons */
+.buttonmain {
+    color: black;
+    /* Set text color to black */
+}
+
+/* Styling for dashboard links */
+.dashboard-link {
+    font-family: Arial, sans-serif;
+    /* Set font family */
+    font-size: 16px;
+    /* Set font size to 16 pixels */
+}
+
+.dashboard-link a {
+    color: blue;
+    /* Set link color to blue */
+    text-decoration: underline;
+    /* Add underline to links */
+}
+
+.dashboard-link .arrow {
+    color: blue;
+    /* Set arrow color to blue */
+    margin-left: 5px;
+    /* Set left margin for arrow */
+}
+
+/* Styling for user icon in welcome message */
+.welcome-user .user-icon {
+    margin-left: 5px;
+    /* Set left margin for user icon */
+    width: 30px;
+    /* Set width of user icon */
+}
+
+/* Styling for welcome message */
+.welcome-user {
+    font-family: Arial, sans-serif;
+    /* Set font family */
+    font-size: 16px;
+    /* Set font size to 16 pixels */
+    margin-left: 70%;
+    /* Set left margin to 70% */
+}
+
+.welcome-user .title {
+    margin-left: -235%;
+    /* Adjust left margin for title */
+    margin-top: -10%;
+    /* Adjust top margin for title */
+}
+
+.welcome-user span {
+    color: black;
+    /* Set text color to black */
+}
+
+/* Styling for usernames */
+.username {
+    color: orange;
+    /* Set text color to orange */
+}
+
+/* Additional styling for arrows within dashboard links */
+.dashboard-link .arrow {
+    width: 50px;
+    /* Set width of arrow */
+    color: rgb(0, 0, 0);
+    /* Set arrow color to black */
+    margin-left: 5px;
+    /* Set left margin for arrow */
+}
+
+/* Styling for informational elements */
+.info {
+    margin-top: 5%;
+    /* Set top margin to 5% */
+    margin-left: 11%;
+    /* Set left margin to 11% */
+}
+
+.info .form-label:nth-child(3) {
+    margin-top: 20px;
+    /* Set top margin for third child of .info */
+}
+
+.info .form-label:nth-child(5) {
+    margin-top: 20px;
+    /* Set top margin for fifth child of .info */
+}
+
+/* Styling for 'About Me' section */
+.about-me {
+    width: 100%;
+    /* Set width to 100% */
+    max-width: 600px;
+    /* Set maximum width to 600 pixels */
+    margin: 0 auto;
+    /* Center align horizontally */
+}
+
+.about-me textarea {
+    width: 100%;
+    /* Set width to 100% */
+    height: 200px;
+    /* Set height to 200 pixels */
+    margin-bottom: 20px;
+    /* Set bottom margin to 20 pixels */
+    resize: none;
+    /* Disable textarea resizing */
+    border-color: black;
+    /* Set border color to black */
+    margin-left: -4%;
+    /* Adjust left margin */
+}
+
+.about-me .buttons {
+    display: flex;
+    /* Use flexbox layout */
+    justify-content: space-between;
+    /* Space items evenly */
+}
+
+.about-me .save {
+    background-color: green;
+    /* Set background color to green */
+    color: white;
+    /* Set text color to white */
+    padding: 10px 20px;
+    /* Set padding */
+    border: none;
+    /* Remove border */
+    cursor: pointer;
+    /* Set cursor to pointer */
+}
