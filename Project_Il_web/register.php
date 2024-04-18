@@ -26,7 +26,7 @@
                         <img src="image/cars.png" class="img" alt="card">
                         <!-- Registration Form -->
                         <form id="registrationForm">
-                            <div>
+                            <div class="padre">
                                 <!-- Input fields for user registration -->
                                 <label for="name" class="form-label">Name</label>
                                 <input type="text" class="form-control" id="name" placeholder="Name">
@@ -80,5 +80,41 @@
         });
     </script>
 </body>
+<?php
+// Datos de conexión a la base de datos
+$servername = "localhost"; // Cambia esto si tu base de datos no está en localhost
+$username = "tu_usuario"; // Cambia esto por tu nombre de usuario de la base de datos
+$password = "tu_contraseña"; // Cambia esto por tu contraseña de la base de datos
+$database = "tu_base_de_datos"; // Cambia esto por el nombre de tu base de datos
+
+// Crear conexión
+$conn = new mysqli($servername, $username, $password, $database);
+
+// Verificar la conexión
+if ($conn->connect_error) {
+    die("Conexión fallida: " . $conn->connect_error);
+}
+
+// Sentencia SQL para crear la tabla 'users'
+$sql = "CREATE TABLE IF NOT EXISTS users (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(255) NOT NULL,
+    last_name VARCHAR(255) NOT NULL,
+    phone VARCHAR(255) NOT NULL,
+    username VARCHAR(255) NOT NULL,
+    password VARCHAR(255) NOT NULL
+)";
+
+// Ejecutar la sentencia SQL
+if ($conn->query($sql) === TRUE) {
+    echo "Tabla 'users' creada exitosamente";
+} else {
+    echo "Error al crear la tabla: " . $conn->error;
+}
+
+// Cerrar la conexión
+$conn->close();
+?>
+
 
 </html>
