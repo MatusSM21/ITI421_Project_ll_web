@@ -1,15 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Linking Bootstrap CSS -->
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Linking custom CSS -->
-    <link rel="stylesheet" href="styles.css/style_settings.css">
-    <title>Tico Rides</title>
-</head>
+<?php
+require($_SERVER['DOCUMENT_ROOT'].'../shared/header.php');
+?>
 
 <body>
     <!-- Container for the content -->
@@ -19,7 +10,7 @@
             <!-- Column for main content -->
             <div class="col-md-8">
                 <!-- Image for illustration -->
-                <img src="image/cars.png" class="img" alt="Illustrative image">
+                <img src="../image/cars.png" class="img" alt="Illustrative image">
                 <!-- Card for navigation buttons -->
                 <div class="card">
                     <!-- Row for button alignment -->
@@ -45,7 +36,7 @@
                     <!-- Username -->
                     <a class="username">barroyo</a>
                     <!-- User icon -->
-                    <img src="image/user.png" alt="User Icon" class="user-icon">
+                    <img src="../image/user.png" alt="User Icon" class="user-icon">
                     <!-- Title -->
                     <h2 class="title">Dashboard</h2>
                 </div>

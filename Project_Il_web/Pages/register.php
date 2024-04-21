@@ -1,17 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <!-- Metadata specifying character set and viewport -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Link to Bootstrap CSS file -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Link to custom stylesheet -->
-    <link rel="stylesheet" href="styles.css/styles_register.css">
-    <!-- Title of the webpage -->
-    <title>TicoRides</title>
-</head>
+<?php
+require($_SERVER['DOCUMENT_ROOT'] . '../shared/header.php');
+?>
 
 <body>
     <!-- Background image container -->
@@ -23,7 +12,7 @@
                 <div class="card">
                     <div class="card-body">
                         <!-- Image -->
-                        <img src="image/cars.png" class="img" alt="card">
+                        <img src="../image/cars.png" class="img" alt="card">
                         <!-- Registration Form -->
                         <form id="registrationForm" method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
                             <?php
@@ -31,24 +20,24 @@
                             include("controller/controller_register.php");
                             ?>
                             <div class="padre">
-                               <div class="name">
-                                <label for=""> Nombre</label>
-                                <input type="text" name="nombre">
-                                <label for="lastname" class="form-label">Last Name</label>
-                                <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Last Name">
-                                <label for="phone" class="form-label">Phone</label>
-                                <input type="text" class="form-control" id="phone" name="phone" placeholder="(XXX) XXX-XXX">
-                                <label for="username" class="form-label">Username</label>
-                                <input type="text" class="form-control" id="username" name="username" placeholder="Username">
-                                <label for="password" class="form-label">Password</label>
-                                <input type="password" class="form-control" id="password" name="password" placeholder="*******">
-                                <label for="rpassword" class="form-label">Repeat Password</label>
-                                <input type="password" class="form-control" id="rpassword" name="rpassword" placeholder="*******">
-                                <!-- Link to login page -->
-                                <p class="pUser">Already have an account? <a href="login.html">Log in</a></p>
-                                <!-- Submit button for registration -->
-                                <button type="submit" name="submit" class="btn btn-primary">Register</button>
-                            </div>
+                                <div class="name">
+                                    <label for=""> Nombre</label>
+                                    <input type="text" name="nombre">
+                                    <label for="lastname" class="form-label">Last Name</label>
+                                    <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Last Name">
+                                    <label for="phone" class="form-label">Phone</label>
+                                    <input type="text" class="form-control" id="phone" name="phone" placeholder="(XXX) XXX-XXX">
+                                    <label for="username" class="form-label">Username</label>
+                                    <input type="text" class="form-control" id="username" name="username" placeholder="Username">
+                                    <label for="password" class="form-label">Password</label>
+                                    <input type="password" class="form-control" id="password" name="password" placeholder="*******">
+                                    <label for="rpassword" class="form-label">Repeat Password</label>
+                                    <input type="password" class="form-control" id="rpassword" name="rpassword" placeholder="*******">
+                                    <!-- Link to login page -->
+                                    <p class="pUser">Already have an account? <a href="login.php">Log in</a></p>
+                                    <!-- Submit button for registration -->
+                                    <button type="submit" name="submit" class="btn btn-primary">Register</button>
+                                </div>
                         </form>
                     </div>
                 </div>

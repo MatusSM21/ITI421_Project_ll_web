@@ -1,19 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <!-- Document declaration and meta tags for character set and viewport -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- External CSS libraries -->
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css/styles_principal.css">
-
-    <!-- Title of the webpage -->
-    <title>Tico Rides</title>
-
-</head>
+<?php
+require($_SERVER['DOCUMENT_ROOT'] . '../shared/header.php');
+?>
 
 <body>
     <!-- Main container -->
@@ -27,9 +14,9 @@
                     <!-- Card body -->
                     <div class="card-body">
                         <!-- Link to login page -->
-                        <a href="login.html" class="btn">Login</a>
+                        <a href="login.php" class="btn">Login</a>
                         <!-- Image with alt text -->
-                        <img src="image/cars.png" class="img" alt="For Illustrative Purposes">
+                        <img src="../image/cars.png" class="img" alt="For Illustrative Purposes">
                         <!-- Main title -->
                         <h5 class="title">Welcome to TicoRides.com</h5>
                         <!-- Subtitle -->
@@ -177,7 +164,11 @@
 
             // Store the new ride in local storage
             var rides = JSON.parse(localStorage.getItem("rides")) || [];
-            rides.push({ from: from, to: to, user: getCurrentUser() });
+            rides.push({
+                from: from,
+                to: to,
+                user: getCurrentUser()
+            });
             localStorage.setItem("rides", JSON.stringify(rides));
 
             // Show a message indicating ride found
@@ -198,7 +189,7 @@
             table.innerHTML = "";
 
             // Populate table with rides
-            rides.forEach(function (ride) {
+            rides.forEach(function(ride) {
                 var row = document.createElement("div");
                 row.classList.add("row", "align-items-start", "ml-3");
                 row.innerHTML = `
@@ -221,7 +212,7 @@
             var updatedTo = prompt("Enter updated destination:", to);
 
             // Update ride details
-            rides.forEach(function (ride) {
+            rides.forEach(function(ride) {
                 if (ride.from === from && ride.to === to) {
                     ride.from = updatedFrom || ride.from;
                     ride.to = updatedTo || ride.to;
@@ -241,7 +232,7 @@
             var rides = JSON.parse(localStorage.getItem("rides")) || [];
 
             // Remove the ride
-            rides = rides.filter(function (ride) {
+            rides = rides.filter(function(ride) {
                 return !(ride.from === from && ride.to === to);
             });
 
@@ -262,7 +253,7 @@
             mainPageTable.innerHTML = "";
 
             // Populate main page table with rides
-            rides.forEach(function (ride) {
+            rides.forEach(function(ride) {
                 var row = document.createElement("div");
                 row.classList.add("row", "align-items-start", "ml-3");
                 row.innerHTML = `
@@ -283,11 +274,10 @@
         }
 
         // Initialize the dashboard table on page load
-        window.onload = function () {
+        window.onload = function() {
             populateRidesTable();
             showMainPageRides();
         };
-
     </script>
 </body>
 

@@ -1,18 +1,12 @@
-
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <title>Tico Rides</title>
-</head>
-
+<?php
+require($_SERVER['DOCUMENT_ROOT'].'../shared/header.php');
+?>
 <body>
     <div class="container">
         <div class="row justify-content-center mt-5">
             <div class="col-md-8">
                 <!-- Logo -->
-                <img src="image/cars.png" class="img" alt="Illustrative Cars">
+                <img src="../image/cars.png" class="img" alt="Illustrative Cars">
                 <!-- Main Navigation -->
                 <div class="card">
                     <div class="row align-items-start ml-1">
@@ -31,7 +25,7 @@
                 <div class="welcome-user">
                     <span>Welcome</span>
                     <span class="username" id="username"></span>
-                    <img src="image/user.png" alt="User Icon" class="user-icon">
+                    <img src="../image/user.png" alt="User Icon" class="user-icon">
                     <h2 class="title">Dashboard</h2>
                 </div>
 
@@ -122,7 +116,7 @@
                             </div>
                         </div>
                         <!-- Button to Add Ride -->
-                        <div class="buttonplus2" onclick="location.href='add.php'">
+                        <div class="buttonplus2" onclick="location.href=''">
                             <div class="plus horizontal"></div>
                             <div class="plus vertical"></div>
                         </div>
