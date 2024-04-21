@@ -1,12 +1,9 @@
-<?php
-require($_SERVER['DOCUMENT_ROOT'] . '/shared/header.php');
-?>
+
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css/style_dashboard.css">
     <title>Tico Rides</title>
 </head>
 
@@ -171,7 +168,3 @@ require($_SERVER['DOCUMENT_ROOT'] . '/shared/header.php');
         localStorage.setItem('username', username.split('@')[0]);
     </script>
 </body>
-
-<?php
-require($_SERVER['DOCUMENT_ROOT'] . '/shared/footer.php');
-?>

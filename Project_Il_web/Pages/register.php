@@ -25,25 +25,29 @@
                         <!-- Image -->
                         <img src="image/cars.png" class="img" alt="card">
                         <!-- Registration Form -->
-                        <form id="registrationForm">
+                        <form id="registrationForm" method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+                            <?php
+                            include("modelo/conexion_bd.php");
+                            include("controller/controller_register.php");
+                            ?>
                             <div class="padre">
-                                <!-- Input fields for user registration -->
-                                <label for="name" class="form-label">Name</label>
-                                <input type="text" class="form-control" id="name" placeholder="Name">
+                               <div class="name">
+                                <label for=""> Nombre</label>
+                                <input type="text" name="nombre">
                                 <label for="lastname" class="form-label">Last Name</label>
-                                <input type="password" class="form-control" id="lastname" placeholder="Last Name">
+                                <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Last Name">
                                 <label for="phone" class="form-label">Phone</label>
-                                <input type="text" class="form-control" id="phone" placeholder="(XXX) XXX-XXX">
+                                <input type="text" class="form-control" id="phone" name="phone" placeholder="(XXX) XXX-XXX">
                                 <label for="username" class="form-label">Username</label>
-                                <input type="text" class="form-control" id="username" placeholder="Username">
+                                <input type="text" class="form-control" id="username" name="username" placeholder="Username">
                                 <label for="password" class="form-label">Password</label>
-                                <input type="password" class="form-control" id="password" placeholder="*******">
+                                <input type="password" class="form-control" id="password" name="password" placeholder="*******">
                                 <label for="rpassword" class="form-label">Repeat Password</label>
-                                <input type="password" class="form-control" id="rpassword" placeholder="*******">
+                                <input type="password" class="form-control" id="rpassword" name="rpassword" placeholder="*******">
                                 <!-- Link to login page -->
                                 <p class="pUser">Already have an account? <a href="login.html">Log in</a></p>
                                 <!-- Submit button for registration -->
-                                <button type="submit" class="">Register</button>
+                                <button type="submit" name="submit" class="btn btn-primary">Register</button>
                             </div>
                         </form>
                     </div>
@@ -54,7 +58,7 @@
 
     <script>
         // Add event listener to the registration form submission
-        document.getElementById("registrationForm").addEventListener("submit", function (event) {
+        document.getElementById("registrationForm").addEventListener("submit", function(event) {
             // Prevent the default form submission
             event.preventDefault();
 
@@ -80,41 +84,5 @@
         });
     </script>
 </body>
-<?php
-// Datos de conexión a la base de datos
-$servername = "localhost"; // Cambia esto si tu base de datos no está en localhost
-$username = "tu_usuario"; // Cambia esto por tu nombre de usuario de la base de datos
-$password = "tu_contraseña"; // Cambia esto por tu contraseña de la base de datos
-$database = "tu_base_de_datos"; // Cambia esto por el nombre de tu base de datos
-
-// Crear conexión
-$conn = new mysqli($servername, $username, $password, $database);
-
-// Verificar la conexión
-if ($conn->connect_error) {
-    die("Conexión fallida: " . $conn->connect_error);
-}
-
-// Sentencia SQL para crear la tabla 'users'
-$sql = "CREATE TABLE IF NOT EXISTS users (
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    name VARCHAR(255) NOT NULL,
-    last_name VARCHAR(255) NOT NULL,
-    phone VARCHAR(255) NOT NULL,
-    username VARCHAR(255) NOT NULL,
-    password VARCHAR(255) NOT NULL
-)";
-
-// Ejecutar la sentencia SQL
-if ($conn->query($sql) === TRUE) {
-    echo "Tabla 'users' creada exitosamente";
-} else {
-    echo "Error al crear la tabla: " . $conn->error;
-}
-
-// Cerrar la conexión
-$conn->close();
-?>
-
 
 </html>

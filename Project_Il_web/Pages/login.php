@@ -1,20 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <!-- Meta tags -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="styles.css/styles_login.css">
-
-    <!-- Title -->
-    <title>TicoRides</title>
-</head>
+<?php
+require($_SERVER['DOCUMENT_ROOT'].'../shared/header.php');
+?>
 
 <body>
     <!-- Container for the entire page -->
@@ -27,7 +13,7 @@
                 <div class="card">
                     <div class="card-body">
                         <!-- Image for illustrative purposes -->
-                        <img src="image/cars.png" class="img" alt="For Illustrative Purposes">
+                        <img src="../image/cars.png" class="img" alt="For Illustrative Purposes">
                         <!-- Form for user login -->
                         <form>
                             <div>
@@ -40,7 +26,7 @@
                                 <!-- Link to register if user doesn't have an account -->
                                 <p class="pUser">Don't have an account? <a href="register.html">Register Here</a></p>
                                 <!-- Button to submit login form -->
-                                <a href="dashboard.html" class="btn btn-primary btn-block">Log In</a>
+                                <a href="dashboard.php" class="btn btn-primary btn-block">Log In</a>
                             </div>
                         </form>
                     </div>
