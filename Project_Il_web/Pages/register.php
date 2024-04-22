@@ -1,6 +1,7 @@
 <?php
-require($_SERVER['DOCUMENT_ROOT'] . '../shared/header.php');
-?>
+require($_SERVER['DOCUMENT_ROOT'].'../shared/header.php');
+require($_SERVER['DOCUMENT_ROOT'].'../models/register_users.php');
+ ?>
 
 <body>
     <!-- Background image container -->
@@ -15,29 +16,38 @@ require($_SERVER['DOCUMENT_ROOT'] . '../shared/header.php');
                         <img src="../image/cars.png" class="img" alt="card">
                         <!-- Registration Form -->
                         <form id="registrationForm" method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
-                            <?php
-                            include("modelo/conexion_bd.php");
-                            include("controller/controller_register.php");
-                            ?>
-                            <div class="padre">
-                                <div class="name">
-                                    <label for=""> Nombre</label>
-                                    <input type="text" name="nombre">
-                                    <label for="lastname" class="form-label">Last Name</label>
-                                    <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Last Name">
-                                    <label for="phone" class="form-label">Phone</label>
-                                    <input type="text" class="form-control" id="phone" name="phone" placeholder="(XXX) XXX-XXX">
-                                    <label for="username" class="form-label">Username</label>
-                                    <input type="text" class="form-control" id="username" name="username" placeholder="Username">
-                                    <label for="password" class="form-label">Password</label>
-                                    <input type="password" class="form-control" id="password" name="password" placeholder="*******">
-                                    <label for="rpassword" class="form-label">Repeat Password</label>
-                                    <input type="password" class="form-control" id="rpassword" name="rpassword" placeholder="*******">
-                                    <!-- Link to login page -->
-                                    <p class="pUser">Already have an account? <a href="login.php">Log in</a></p>
-                                    <!-- Submit button for registration -->
-                                    <button type="submit" name="submit" class="btn btn-primary">Register</button>
-                                </div>
+                        <div>
+                                <div class="message"><?php echo $message; ?></div>
+                                <!-- Input field for first name -->
+                                <label for="name" class="form-label">Nombre</label>
+                                <input type="text" class="form-control" id="name" name="name" placeholder="Nombre">
+
+                                <!-- Input field for last name -->
+                                <label for="lastname" class="form-label">Apellido</label>
+                                <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Apellido">
+
+                                <!-- Input field for phone number -->
+                                <label for="phone" class="form-label">Teléfono</label>
+                                <input type="text" class="form-control" id="phone" name="phone" placeholder="(XXX) XXX-XXX">
+
+                                <!-- Input field for username -->
+                                <label for="username" class="form-label">Nombre de Usuario</label>
+                                <input type="text" class="form-control" id="username" name="username" placeholder="Nombre de Usuario">
+
+                                <!-- Input field for password -->
+                                <label for="password" class="form-label">Contraseña</label>
+                                <input type="password" class="form-control" id="password" name="password" placeholder="*******">
+
+                                <!-- Input field for confirming password -->
+                                <label for="rpassword" class="form-label">Repita Contraseña</label>
+                                <input type="password" class="form-control" id="rpassword" name="confirm_password" placeholder="*******">
+
+                                <!-- Link to login page -->
+                                <p class="pUser"> Ya tiene Usuario? <a href="login.php">Iniciar Sesión</a></p>
+
+                                <!-- Button to submit registration -->
+                                <button type="submit" class="btn btn-primary btn-block">Registrese</button>
+                            </div>
                         </form>
                     </div>
                 </div>
@@ -45,33 +55,6 @@ require($_SERVER['DOCUMENT_ROOT'] . '../shared/header.php');
         </div>
     </div>
 
-    <script>
-        // Add event listener to the registration form submission
-        document.getElementById("registrationForm").addEventListener("submit", function(event) {
-            // Prevent the default form submission
-            event.preventDefault();
-
-            // Get values from form inputs
-            var name = document.getElementById("name").value;
-            var lastname = document.getElementById("lastname").value;
-            var phone = document.getElementById("phone").value;
-            var username = document.getElementById("username").value;
-            var password = document.getElementById("password").value;
-
-            // Save values to localStorage
-            localStorage.setItem("name", name);
-            localStorage.setItem("lastname", lastname);
-            localStorage.setItem("phone", phone);
-            localStorage.setItem("username", username);
-            localStorage.setItem("password", password);
-
-            // Display a success message to the user
-            alert("Registration successful!");
-
-            // Redirect the user to the main page
-            window.location.href = "";
-        });
-    </script>
 </body>
 
 </html>

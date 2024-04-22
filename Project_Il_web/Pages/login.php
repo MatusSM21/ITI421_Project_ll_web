@@ -24,7 +24,7 @@ require($_SERVER['DOCUMENT_ROOT'].'../shared/header.php');
                                 <label class="form-label">Password</label>
                                 <input type="password" class="form-control" placeholder="Password">
                                 <!-- Link to register if user doesn't have an account -->
-                                <p class="pUser">Don't have an account? <a href="register.html">Register Here</a></p>
+                                <p class="pUser">Don't have an account? <a href="register.php">Register Here</a></p>
                                 <!-- Button to submit login form -->
                                 <a href="dashboard.php" class="btn btn-primary btn-block">Log In</a>
                             </div>
