@@ -1,32 +1,46 @@
 <?php
 require($_SERVER['DOCUMENT_ROOT'].'../shared/header.php');
+require($_SERVER['DOCUMENT_ROOT'].'../models/login_users.php');
 ?>
 
 <body>
-    <!-- Container for the entire page -->
+    <!-- Container for page content -->
     <div class="container">
-        <!-- Row to justify content in the center -->
-        <div class="row justify-content-center mt-5">
-            <!-- Column for medium devices, expanded from 4 to 8 -->
-            <div class="col-md-8">
-                <!-- Card for login form -->
+        <!-- Row for content, justified to the left -->
+        <div class="row justify-content-left mt-5">
+            <!-- Column with a width of 4 for medium-sized screens -->
+            <div class="col-md-4">
+                <!-- Card container -->
                 <div class="card">
+                    <!-- Card body -->
                     <div class="card-body">
-                        <!-- Image for illustrative purposes -->
-                        <img src="../image/cars.png" class="img" alt="For Illustrative Purposes">
-                        <!-- Form for user login -->
-                        <form>
+                        <!-- Logo image -->
+                        <img src="../Image/cars.png" class="img" alt="Fines Ilustrativos">
+
+                        <!-- Login form -->
+                        <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
                             <div>
-                                <!-- Username input field -->
-                                <label for="fromLocation" class="form-label">Username</label>
-                                <input type="text" class="form-control" id="fromLocation" placeholder="Username">
-                                <!-- Password input field -->
-                                <label class="form-label">Password</label>
-                                <input type="password" class="form-control" placeholder="Password">
-                                <!-- Link to register if user doesn't have an account -->
-                                <p class="pUser">Don't have an account? <a href="register.php">Register Here</a></p>
-                                <!-- Button to submit login form -->
-                                <a href="dashboard.php" class="btn btn-primary btn-block">Log In</a>
+                                <!-- Username input -->
+                                <label for="fromLocation" class="form-label">Nombre de Usuario</label>
+                                <input type="text" class="form-control" id="fromLocation" name="username" placeholder="Usuario">
+
+                                <!-- Password input -->
+                                <label class="form-label">Contraseña</label>
+                                <input type="password" class="form-control" name="password" placeholder="Contraseña">
+
+                                <!-- Error message -->
+                                <?php if (isset($_SESSION['error'])) { ?>
+                                    <div class="alert alert-danger mt-3" role="alert">
+                                        <?php echo $_SESSION['error']; ?>
+                                    </div>
+                                <?php unset($_SESSION['error']);
+                                } ?>
+
+                                <!-- Link to registration page -->
+                                <p class="pUser"> ¿No tiene cuenta? <a href="register.php">Regístrese aquí</a></p>
+
+                                <!-- Button to submit login -->
+                                <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
                             </div>
                         </form>
                     </div>
@@ -35,17 +49,6 @@ require($_SERVER['DOCUMENT_ROOT'].'../shared/header.php');
         </div>
     </div>
 </body>
-<script>
-    function login() {
-        // Obtener el valor del campo de correo electrónico
-        var email = document.getElementById('fromLocation').value;
 
-        // Extraer el nombre de usuario del correo electrónico
-        var username = email.split('@')[0]; // Suponiendo que el nombre de usuario está antes del '@'
-
-        // Almacenar el nombre de usuario en localStorage
-        localStorage.setItem('username', username);
-    }
-</script>
 
 </html>
