@@ -1,53 +1,62 @@
 <?php
-require($_SERVER['DOCUMENT_ROOT'].'../shared/header.php');
+require_once($_SERVER['DOCUMENT_ROOT'] . '../shared/header.php');
+require_once($_SERVER['DOCUMENT_ROOT'] . '../models/dashboard_models.php');
 ?>
+
+
 <body>
     <div class="container">
+        <!-- Container for page content -->
         <div class="row justify-content-center mt-5">
+            <!-- Row for content, centered -->
             <div class="col-md-8">
-                <!-- Logo -->
-                <img src="../image/cars.png" class="img" alt="Illustrative Cars">
-                <!-- Main Navigation -->
+                <!-- Column with a width of 8 for medium-sized screens -->
+                <img src="../Image/cars.png" class="img" alt="Fines Ilustrativos">
+                <!-- Logo image -->
                 <div class="card">
+                    <!-- Card container -->
                     <div class="row align-items-start ml-1">
+                        <!-- Row for navigation links -->
                         <div class="col">
-                            <a href="dashboard.php" class="buttonmain">Dashboard</a>
+                            <!-- Column for each navigation link -->
+                            <a href="../pages/dashboard.php" class="buttonmain">Dashboard</a>
                         </div>
                         <div class="col">
-                            <a href="rides.php" class="buttonmain">Rides</a>
+                            <a href="../actions/add.php" class="buttonmain">Rides</a>
                         </div>
                         <div class="col">
-                            <a href="settings.php" class="buttonmain">Settings</a>
+                            <a href="../pages/settings.php" class="buttonmain">Settings</a>
                         </div>
                     </div>
                 </div>
-                <!-- User Welcome Section -->
                 <div class="welcome-user">
+                    <!-- Welcome message with user's name -->
                     <span>Welcome</span>
-                    <span class="username" id="username"></span>
-                    <img src="../image/user.png" alt="User Icon" class="user-icon">
+                    <a class="username">barroyo</a>
+                    <img src="../Image/user.png" alt="User Icon" class="user-icon">
                     <h2 class="title">Dashboard</h2>
                 </div>
 
-                <!-- Dashboard Navigation -->
                 <div class="dashboard-link">
-                    <a href="dashboard.php">Dashboard</a>
+                    <!-- Link to the dashboard -->
+                    <a href="#">Dashboard</a>
                     <span class="arrow">></span>
                 </div>
 
-                <!-- Title for My Rides Section -->
                 <p class="title">My Rides</p>
-                <!-- Rides Card -->
+                <!-- Title for the section -->
                 <div class="card">
+                    <!-- Card container for ride information -->
                     <div class="card-body">
-                        <!-- Title for Rides List -->
+                        <!-- Body of the card -->
                         <p class="title">Your current list of Rides</p>
-                        <!-- Button to Add Ride -->
-                        <div class="buttonplus" onclick="location.href='styles_principal.php'">
+                        <!-- Title for the list of rides -->
+                        <div class="buttonplus" onclick="location.href='../actions/add_rides.php'">
+                            <!-- Button to add a new ride -->
                             <div class="plus horizontal"></div>
                             <div class="plus vertical"></div>
                         </div>
-                        <!-- Rides Table -->
+                        <!-- Table displaying ride information -->
                         <div class="table">
                             <div class="row align-items-start ml-3">
                                 <div class="col">
@@ -63,102 +72,34 @@ require($_SERVER['DOCUMENT_ROOT'].'../shared/header.php');
                                     Actions
                                 </div>
                             </div>
-                            <!-- Sample Ride Entry -->
-                            <div class="row align-items-start ml-3">
-                                <div class="col ride-name">
-                                    Brete
-                                </div>
-                                <div class="col ride-start">
-                                    Barrio Los Angeles
-                                </div>
-                                <div class="col ride-end">
-                                    Ciudad Quesada
-                                </div>
-                                <div class="col">
-                                    <!-- Edit and Delete Buttons -->
-                                    <button onclick="editRide(this)">Edit</button>
-                                    <button onclick="deleteRide(this)">Delete</button>
-                                </div>
-                            </div>
-                            <!-- Another Sample Ride Entry -->
-                            <div class="row align-items-start ml-3">
-                                <div class="col ride-name">
-                                    Casa
-                                </div>
-                                <div class="col ride-start">
-                                    Ciudad Quesada
-                                </div>
-                                <div class="col ride-end">
-                                    Los Angeles
-                                </div>
-                                <div class="col">
-                                    <!-- Edit and Delete Buttons -->
-                                    <button onclick="editRide(this)">Edit</button>
-                                    <button onclick="deleteRide(this)">Delete</button>
-                                </div>
-                            </div>
-                            <!-- Another Sample Ride Entry -->
-                            <div class="row align-items-start ml-3">
-                                <div class="col ride-name">
-                                    Oficina Chepe
-                                </div>
-                                <div class="col ride-start">
-                                    Ciudad Quesada
-                                </div>
-                                <div class="col ride-end">
-                                    San Pedro
-                                </div>
-                                <div class="col">
-                                    <!-- Edit and Delete Buttons -->
-                                    <button onclick="editRide(this)">Edit</button>
-                                    <button onclick="deleteRide(this)">Delete</button>
-                                </div>
-                            </div>
+                            <?php
+                            // Aquí incluye el código PHP para imprimir los rides en la tabla
+                            // Asegúrate de tener la lógica para obtener los rides del usuario en el archivo dashboard_action.php
+                            // y de almacenar los datos en un array $rides
+                            foreach ($rides as $ride) {
+                                echo "<div class='row align-items-start ml-3'>";
+                                echo "<div class='col'>" . $ride['ride_name'] . "</div>";
+                                echo "<div class='col'>" . $ride['start_from'] . "</div>";
+                                echo "<div class='col'>" . $ride['end_to'] . "</div>";
+                                echo "<div class='col'>";
+                                echo "<a href='edit.php?id=" . $ride['id'] . "' class='button'>Edit -</a>";;
+                                echo "<a href='' class='button'>Delete</a>";
+                                echo "</div>";
+                                echo "</div>";
+                            }
+                            ?>
                         </div>
-                        <!-- Button to Add Ride -->
-                        <div class="buttonplus2" onclick="location.href=''">
-                            <div class="plus horizontal"></div>
-                            <div class="plus vertical"></div>
-                        </div>
+                    </div>
+                    <div class="buttonplus2" onclick="location.href='../actions/add_rides.php'">
+                        <!-- Button to add a new ride (similar to the previous one) -->
+                        <div class="plus horizontal"></div>
+                        <div class="plus vertical"></div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
-    <script>
-        // Recuperar el nombre de usuario almacenado en localStorage
-        var username = localStorage.getItem('username');
-
-        // Mostrar el nombre de usuario en el lugar deseado
-        document.getElementById('username').innerText = username;
-    </script>
-
-    <!-- JavaScript Function to Show Message -->
-    <script>
-        function editRide(button) {
-            var row = button.parentElement.parentElement;
-            var name = row.querySelector('.ride-name').innerText;
-            var start = row.querySelector('.ride-start').innerText;
-            var end = row.querySelector('.ride-end').innerText;
-
-            var newName = prompt("Enter new name:", name);
-            var newStart = prompt("Enter new start:", start);
-            var newEnd = prompt("Enter new end:", end);
-
-            if (newName && newStart && newEnd) {
-                row.querySelector('.ride-name').innerText = newName;
-                row.querySelector('.ride-start').innerText = newStart;
-                row.querySelector('.ride-end').innerText = newEnd;
-            }
-        }
-
-        function deleteRide(button) {
-            var row = button.parentElement.parentElement;
-            row.remove();
-        }
-        <!-- En el área donde el usuario inicia sesión correctamente -->
-        // Suponiendo que "username" es el nombre de usuario que el usuario ha ingresado
-        localStorage.setItem('username', username.split('@')[0]);
-    </script>
+    </div>
 </body>
+
+</html>

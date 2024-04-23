@@ -2,15 +2,6 @@
 require($_SERVER['DOCUMENT_ROOT'] . '../shared/header.php');
 ?>
 
-<!-- Script to define showMessage function -->
-<script>
-    function showMessage(message) {
-        // Displays an alert with the given message
-        alert(message);
-    }
-</script>
-
-
 <body>
     <div class="container">
         <!-- Row for content alignment -->
