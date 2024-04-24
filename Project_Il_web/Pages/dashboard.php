@@ -83,7 +83,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '../models/dashboard_models.php');
                                 echo "<div class='col'>" . $ride['end_to'] . "</div>";
                                 echo "<div class='col'>";
                                 echo "<a href='edit.php?id=" . $ride['id'] . "' class='button'>Edit -</a>";;
-                                echo "<a href='' class='button'>Delete</a>";
+                                echo "<a href='?delete_id=" . $ride['id'] . "' class='button'>Delete</a>";;
                                 echo "</div>";
                                 echo "</div>";
                             }
