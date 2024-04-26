@@ -1,96 +1,114 @@
 <?php
-require($_SERVER['DOCUMENT_ROOT'] . '../shared/header.php');
+// Check if a user session is set
+if (isset($_SESSION['username'])) {
+    $username = $_SESSION['username'];
+} else {
+    // If no session is set or username is not available, display a default value
+    $username = "";
+}
+// Include necessary files
+require_once($_SERVER['DOCUMENT_ROOT'] . '../shared/header.php');
+require_once($_SERVER['DOCUMENT_ROOT'] . '../db/conexion_db.php');
+
+// Check if a ride ID is provided in the URL
+if (isset($_GET['id'])) {
+    $ride_id = $_GET['id'];
+
+    // Query to retrieve ride details with the provided ID
+    $sql = "SELECT * FROM rides WHERE id = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("i", $ride_id);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    // Check if the ride is found
+    if ($result->num_rows == 1) {
+        $ride = $result->fetch_assoc();
 ?>
 
-<body>
-    <div class="container">
-        <!-- Row for content alignment -->
-        <div class="row justify-content-center mt-5">
-            <div class="col-md-8">
-                <!-- Image for the card -->
-                <img src="../image/cars.png" class="img" alt="card">
-                <div class="card">
-                    <!-- Row for buttons -->
-                    <div class="row align-items-start ml-1">
-                        <div class="col">
-                            <!-- Button to show Dashboard message -->
-                            <button class="dashboard" onclick="showMessage('Dashboard')">Dashboard</button>
-                        </div>
-                        <div class="col">
-                            <!-- Button to show Rides message -->
-                            <button class="Rides" onclick="showMessage('Rides')">Rides</button>
-                        </div>
-                        <div class="col">
-                            <!-- Button to show Settings message -->
-                            <button class="Settings" onclick="showMessage('Settings')">Settings</button>
-                        </div>
-                    </div>
-                </div>
-                <!-- Welcome message with username -->
-                <div class="welcome-user">
-                    <span>Welcome</span>
-                    <a class="username">barroyo</a>
-                    <img src="../image/user.png" alt="User Icon" class="user-icon">
-                    <h2 class="title">Dashboard</h2>
-                </div>
-                <!-- Navigation links -->
-                <div class="dashboard-link">
-                    <a href="#">Dashboard</a>
-                    <span class="arrow">></span>
-                    <a href="#">Rides</a>
-                    <span class="arrow">> Edit</span>
-                </div>
-                <!-- Form for ride information -->
-                <div class="info">
-                    <label for="ridename" class="form-label">Nombre del Viaje</label>
-                    <input type="text" class="form-control" id="ridename" placeholder="Brete">
-                    <label for="startfrom" class="form-label">Lugar de Salida</label>
-                    <input type="text" class="form-control" id="startfrom" placeholder="Barrio Los Angeles, Ciudad Quesada">
-                    <label for="description" class="form-label">Descripción</label>
-                    <div class="description">
-                        <!-- Textarea for ride description -->
-                        <textarea id="description" placeholder="This is my everyday ride, from Barrio Los Angles to my job´s office in Second Floor of Cooperservidores Building"></textarea>
-                        <h3>Cuando</h3>
-                        <!-- Row for time and day selection -->
-                        <div class="row align-items-start ml-3">
-                            <div class="col">
-                                <label for="departure" class="form-label">Hora de Salida</label>
-                                <!-- Input field for departure time -->
-                                <input type="time" class="form-control" id="departure" value="06:45">
-                                <label for="arrival" class="form-label">Hora Estimada de Llegada</label>
-                                <!-- Input field for estimated arrival time -->
-                                <input type="time" class="form-control" id="arrival" value="07:05">
-                                <!-- Link to cancel action -->
-                                <a class="cancel" href="dashboard.html">Cancelar</a>
-                            </div>
-                            <div class="col">
-                                <label for="days" class="form-label">Seleccione los Dias</label>
-                                <div id="days">
-                                    <!-- Checkboxes for selecting days -->
-                                    <input type="checkbox" id="monday" name="day" value="Monday">
-                                    <label for="monday">Monday</label><br>
-                                    <input type="checkbox" id="tuesday" name="day" value="Tuesday">
-                                    <label for="tuesday">Tuesday</label><br>
-                                    <input type="checkbox" id="wednesday" name="day" value="Wednesday">
-                                    <label for="wednesday">Wednesday</label><br>
-                                    <input type="checkbox" id="thursday" name="day" value="Thursday">
-                                    <label for="thursday">Thursday</label><br>
-                                    <input type="checkbox" id="friday" name="day" value="Friday">
-                                    <label for="friday">Friday</label><br>
-                                    <input type="checkbox" id="saturday" name="day" value="Saturday">
-                                    <label for="saturday">Saturday</label><br>
-                                    <input type="checkbox" id="sunday" name="day" value="Sunday">
-                                    <label for="sunday">Sunday</label><br>
-                                    <!-- Button to save information -->
-                                    <button class="save" onclick="showMessage('Guardado')">Guardar</button>
+        <body>
+            <!-- Container for page content -->
+            <div class="container">
+                <!-- Row for content, centered -->
+                <div class="row justify-content-center mt-5">
+                    <!-- Column with a width of 8 for medium-sized screens -->
+                    <div class="col-md-8">
+                        <!-- Logo image -->
+                        <img src="../Image/cars.png" class="img" alt="Illustrative Purposes">
+                        <!-- Information section -->
+                        <div class="info">
+                            <!-- Label and input field for ride name -->
+                            <label for="ridename" class="form-label">Ride Name</label>
+                            <!-- Display the ride name -->
+                            <input type="text" class="form-control" id="ridename" value="<?php echo $ride['ride_name']; ?>" disabled>
+                            <!-- Label and input field for starting location -->
+                            <label for="startfrom" class="form-label">Start Location</label>
+                            <!-- Display the starting location -->
+                            <input type="text" class="form-control" id="location" value="<?php echo $ride['start_from']; ?>" disabled>
+                            <label for="startfrom" class="form-label">End Location</label>
+                            <!-- Display the starting location -->
+                            <input type="text" class="form-control" id="location" value="<?php echo $ride['end_to']; ?>" disabled>
+                            <!-- Label and textarea for ride description -->
+                            <label for="description" class="form-label">Description</label>
+                            <div class="description">
+                                <!-- Display the ride description -->
+                                <textarea id="description" disabled><?php echo $ride['description']; ?></textarea>
+                                <!-- Subheading for schedule -->
+                                <h3>Schedule</h3>
+                                <!-- Row for schedule inputs -->
+                                <div class="row align-items-start ml-3">
+                                    <!-- Column for time inputs -->
+                                    <div class="col">
+                                        <!-- Label and input field for departure time -->
+                                        <label for="departure" class="form-label">Departure Time</label>
+                                        <!-- Display the departure time -->
+                                        <input type="time" class="form-control" id="departure" value="<?php echo $ride['departure_time']; ?>" disabled>
+                                        <!-- Label and input field for estimated arrival time -->
+                                        <label for="arrival" class="form-label">Estimated Arrival Time</label>
+                                        <!-- Display the estimated arrival time -->
+                                        <input type="time" class="form-control" id="arrival" value="<?php echo $ride['arrival_time']; ?>" disabled>
+                                        <!-- Link to cancel -->
+                                        <a class="cancel" href="../Pages/index.php">Cancel</a>
+                                    </div>
+                                    <!-- Column for selecting days -->
+                                    <div class="col">
+                                        <!-- Label for day selection -->
+                                        <label for="days" class="form-label">Days</label>
+                                        <!-- Display the days of the ride -->
+                                        <div id="days">
+                                            <?php
+                                            // Convert the ride days from numeric format to day name
+                                            $days = explode(',', $ride['days']);
+                                            $day_names = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+                                            foreach ($day_names as $day_name) {
+                                                // Check if the day name is in the ride's days list
+                                                if (in_array($day_name, $days)) {
+                                                    echo "<div><input type='checkbox' id='$day_name' name='day' value='$day_name' checked disabled>";
+                                                    echo "<label for='$day_name'>$day_name</label></div>";
+                                                } else {
+                                                    echo "<div><input type='checkbox' id='$day_name' name='day' value='$day_name' disabled>";
+                                                    echo "<label for='$day_name'>$day_name</label></div>";
+                                                }
+                                            }
+                                            ?>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-</body>
+        </body>
 
-</html>
+        </html>
+<?php
+    } else {
+        // If the ride is not found, display an error message
+        echo "The ride was not found.";
+    }
+} else {
+    // If no ride ID is provided in the URL, display an error message
+    echo "No ride ID provided.";
+}
+?>

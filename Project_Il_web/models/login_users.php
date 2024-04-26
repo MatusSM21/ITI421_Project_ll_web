@@ -3,9 +3,9 @@ if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
 
-require($_SERVER['DOCUMENT_ROOT'] . '../db/conexion_db.php');
+require_once($_SERVER['DOCUMENT_ROOT'] . '../db/conexion_db.php');
 
-// Función para limpiar los datos del formulario
+// Function to sanitize form data
 function clean_input($data)
 {
     $data = trim($data);
@@ -18,8 +18,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = clean_input($_POST['username']);
     $password = $_POST['password'];
 
-    // Consulta para obtener los datos del usuario
-    $sql = "SELECT id, password FROM users WHERE username = ?";
+    // Query to fetch user data
+    $sql = "SELECT id, username, password FROM users WHERE username = ?";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("s", $username);
     $stmt->execute();
@@ -28,17 +28,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($result->num_rows == 1) {
         $row = $result->fetch_assoc();
         if (password_verify($password, $row['password'])) {
-            // Las credenciales son válidas, inicia sesión y redirige al dashboard
+            // Credentials are valid, start session and redirect to dashboard
             $_SESSION['user_id'] = $row['id'];
+            $_SESSION['username'] = $row['username']; // Store username in session
             header("Location: dashboard.php");
             exit();
         } else {
-            $_SESSION['error'] = "Nombre de usuario o contraseña incorrectos.";
+            $_SESSION['error'] = "Nombre de usuario o contraseña incorrecta.";
             header("Location: login.php");
             exit();
         }
     } else {
-        $_SESSION['error'] = "Nombre de usuario o contraseña incorrectos.";
+        $_SESSION['error'] = "Nombre de usuario o contraseña incorrecta.";
         header("Location: login.php");
         exit();
     }

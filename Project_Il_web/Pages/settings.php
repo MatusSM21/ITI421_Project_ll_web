@@ -1,84 +1,77 @@
 <?php
-require($_SERVER['DOCUMENT_ROOT'].'../shared/header.php');
+// Include necessary files
+require($_SERVER['DOCUMENT_ROOT'] . '../shared/header.php');
+require($_SERVER['DOCUMENT_ROOT'] . '../actions/settings_actions.php');
+
+// Check if a user session is set
+if (isset($_SESSION['username'])) {
+    $username = $_SESSION['username'];
+} else {
+    // If no session is set or username is not available, display a default value
+    $username = "no carga";
+}
 ?>
 
 <body>
-    <!-- Container for the content -->
+    <!-- Container for page content -->
     <div class="container">
-        <!-- Row for alignment -->
+        <!-- Row for content, centered -->
         <div class="row justify-content-center mt-5">
-            <!-- Column for main content -->
+            <!-- Column with a width of 8 for medium-sized screens -->
             <div class="col-md-8">
-                <!-- Image for illustration -->
-                <img src="../image/cars.png" class="img" alt="Illustrative image">
-                <!-- Card for navigation buttons -->
+                <!-- Logo image -->
+                <img src="../Image/cars.png" class="img" alt="Fines Ilustrativos">
+                <!-- Card container -->
                 <div class="card">
-                    <!-- Row for button alignment -->
+                    <!-- Row for navigation links -->
                     <div class="row align-items-start ml-1">
-                        <!-- Button for Dashboard -->
+                        <!-- Column for each navigation link -->
                         <div class="col">
-                            <button class="dashboard" onclick="showMessage('Dashboard')">Dashboard</button>
+                            <a href="dashboard.php" class="buttonmain">Dashboard</a>
                         </div>
-                        <!-- Button for Rides -->
                         <div class="col">
-                            <button class="rides" onclick="showMessage('Rides')">Rides</button>
+                            <a href="add.php" class="buttonmain">Rides</a>
                         </div>
-                        <!-- Button for Settings -->
                         <div class="col">
-                            <button class="settings" onclick="showMessage('Settings')">Settings</button>
+                            <a href="settings.php" class="buttonmain">Settings</a>
                         </div>
                     </div>
                 </div>
-                <!-- Section to welcome the user -->
+                <!-- Welcome message with user's name -->
                 <div class="welcome-user">
-                    <!-- Welcome message -->
                     <span>Welcome</span>
-                    <!-- Username -->
-                    <a class="username">barroyo</a>
-                    <!-- User icon -->
-                    <img src="../image/user.png" alt="User Icon" class="user-icon">
-                    <!-- Title -->
+                    <a class="username"><?php echo $username; ?></a>
+                    <img src="../Image/user.png" alt="User Icon" class="user-icon">
                     <h2 class="title">Dashboard</h2>
                 </div>
-                <!-- Breadcrumb link for dashboard -->
+                <!-- Breadcrumb links -->
                 <div class="dashboard-link">
-                    <a href="#">Dashboard</a>
-                    <!-- Arrow indicating current page -->
-                    <span class="arrow">> Settings</span>
+                    <a href="dashboard.php">Dashboard</a>
+                    <span href="settings.php" class="arrow">> Settings</span>
                 </div>
-                <!-- Form for user information -->
+                <!-- Information section -->
                 <div class="info">
-                    <!-- Input field for Full Name -->
-                    <label for="fullname" class="form-label">Full Name</label>
-                    <input type="text" class="form-control" id="fullname" placeholder="Bladimir Barroyo">
-                    <!-- Input field for Average Speed -->
-                    <label for="speedAverage" class="form-label">Average Speed</label>
-                    <input type="text" class="form-control" id="speedAverage" placeholder="60 km/h">
-                    <!-- Input field for About Me -->
-                    <label for="aboutMe" class="form-label">About Me</label>
-                    <div class="about-me">
-                        <!-- Textarea for user description -->
-                        <textarea id="aboutMe" placeholder="Something about me goes here"></textarea>
-                        <!-- Buttons for actions -->
+                    <!-- Form for updating user settings -->
+                    <form method="post" action="../actions/settings_actions.php">
+                        <!-- Label and input field for full name -->
+                        <label for="fullname" class="form-label">Full Name</label>
+                        <input type="text" name="fullname" class="form-control" id="fullname" placeholder="Full Name" value="<?php echo htmlspecialchars($full_name); ?>">
+                        <!-- Label and input field for average speed -->
+                        <label for="speedAverage" class="form-label">Average Speed</label>
+                        <input type="text" name="speedAverage" class="form-control" id="speedAverage" placeholder="km/h" value="<?php echo htmlspecialchars($average_speed); ?>">
+                        <!-- Label and textarea for personal description -->
+                        <label for="aboutMe" class="form-label">About Me</label>
+                        <textarea name="aboutMe" id="aboutMe" class="form-control" placeholder="Something about me goes here"><?php echo htmlspecialchars($about_me); ?></textarea>
+                        <!-- Buttons for cancel and save -->
                         <div class="buttons">
-                            <!-- Button to cancel -->
-                            <a href="dashboard.html">Cancel</a>
-                            <!-- Button to save changes -->
-                            <button class="save">Save</button>
+                            <a href="dashboard.php" class="btn btn-secondary">Cancel</a>
+                            <button type="settin" class="btn btn-primary">Save</button>
                         </div>
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
-
-    <!-- JavaScript function to show alert -->
-    <script>
-        function showMessage(page) {
-            // Display an alert with the page name
-            alert("You clicked on " + page);
-        }
-    </script>
 </body>
 
 </html>

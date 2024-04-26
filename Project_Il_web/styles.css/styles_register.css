@@ -46,7 +46,7 @@ body {
     /* Set maximum width of images to 100% of container */
     height: auto;
     /* Maintain aspect ratio of images */
-    margin-bottom: 20px;
+    margin-bottom: 200px;
     /* Add margin at the bottom of images */
 }
 
@@ -54,6 +54,6 @@ body {
 .pUser {
     margin-top: 20px;
     /* Add margin at the top of paragraphs */
-    margin-bottom: 0;
+    margin-bottom: 100;
     /* Remove margin at the bottom of paragraphs */
 }

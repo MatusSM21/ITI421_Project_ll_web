@@ -4,9 +4,9 @@
     margin-left: 85%;
     margin-top: 6%;
     /* Setting padding */
-    padding: 10px 20px;
+    padding: 0px 10px;
     /* Defining border properties */
-    border: 0.5px solid #4f77b4;
+    border: 5px solid #5cbb64;
     /* Setting font size and weight */
     font-size: 19px;
     font-weight: 650;
@@ -47,7 +47,7 @@
 /* Styles for the text input */
 .input-text {
     /* Adding border to the text input */
-    border: 1px solid #ccc;
+    border: 1px solid #5aaf66;
     /* Adding padding */
     padding: 5px;
     /* Adding left margin to separate from text */
@@ -106,4 +106,16 @@
 .button {
     /* Setting button color */
     color: #000000;
+}
+/* CSS para cambiar el color del mensaje */
+.search-message {
+    margin-bottom: 10px;
+}
+
+.success-message {
+    color: green;
+}
+
+.error-message {
+    color: red;
 }

@@ -1,22 +1,24 @@
-<?php
-require($_SERVER['DOCUMENT_ROOT'].'../shared/header.php');
-require($_SERVER['DOCUMENT_ROOT'].'../models/register_users.php');
- ?>
+<?php require($_SERVER['DOCUMENT_ROOT'] . '../shared/header.php'); ?>
+<?php require($_SERVER['DOCUMENT_ROOT'] . '../models/register_users.php'); ?>
 
 <body>
-    <!-- Background image container -->
-    <div class="background-image"></div>
+    <!-- Container for page content -->
     <div class="container">
-        <!-- Row for content alignment -->
+        <!-- Row for content, justified to the left -->
         <div class="row justify-content-left mt-5">
+            <!-- Column with a width of 4 for medium-sized screens -->
             <div class="col-md-4">
+                <!-- Card container -->
                 <div class="card">
+                    <!-- Card body -->
                     <div class="card-body">
-                        <!-- Image -->
-                        <img src="../image/cars.png" class="img" alt="card">
-                        <!-- Registration Form -->
-                        <form id="registrationForm" method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
-                        <div>
+                        <!-- Logo image -->
+                        <img src="../Image/cars.png" class="img" alt="Fines Ilustrativos">
+
+                        <!-- Registration form -->
+                        <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+                            <!-- Registration form -->
+                            <div>
                                 <div class="message"><?php echo $message; ?></div>
                                 <!-- Input field for first name -->
                                 <label for="name" class="form-label">Nombre</label>
@@ -46,7 +48,7 @@ require($_SERVER['DOCUMENT_ROOT'].'../models/register_users.php');
                                 <p class="pUser"> Ya tiene Usuario? <a href="login.php">Iniciar Sesión</a></p>
 
                                 <!-- Button to submit registration -->
-                                <button type="submit" class="btn btn-primary btn-block">Registrese</button>
+                                <button type="submit" class="btn btn-primary">Registrese</button>
                             </div>
                         </form>
                     </div>
@@ -54,7 +56,6 @@ require($_SERVER['DOCUMENT_ROOT'].'../models/register_users.php');
             </div>
         </div>
     </div>
-
 </body>
 
 </html>

@@ -1,6 +1,6 @@
 <?php
-require($_SERVER['DOCUMENT_ROOT'].'../shared/header.php');
-require($_SERVER['DOCUMENT_ROOT'].'../models/login_users.php');
+require_once($_SERVER['DOCUMENT_ROOT'] . '../shared/header.php');
+require_once($_SERVER['DOCUMENT_ROOT'] . '../models/login_users.php');
 ?>
 
 <body>
@@ -49,6 +49,5 @@ require($_SERVER['DOCUMENT_ROOT'].'../models/login_users.php');
         </div>
     </div>
 </body>
-
 
 </html>
